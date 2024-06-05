@@ -1,0 +1,33 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+set -x
+
+cd subModels/surfaceFilmModels
+wclean
+cd ../../subModels/intermediate
+wclean
+cd ../../subModels/particlesLib
+wclean
+cd ../../subModels/extrudeToFilmCellDist
+wclean
+cd ../../subModels/addLayerTo0
+wclean
+cd ../../subModels/addTwoLayersTo0
+wclean
+cd ../../subModels/iceMass
+wclean
+cd ../../iceFoam
+wclean
+cd iceDyMFoam
+wclean
+cd ../iceDyMFoam8
+wclean
+cd ../iceDyMFoam82
+wclean
+cd ../iceDyMFoam9
+wclean
+cd ../iceDyMFoam92
+wclean
+cd ../..
+
+# ----------------------------------------------------------------- end-of-file

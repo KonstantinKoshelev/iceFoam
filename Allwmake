@@ -1,0 +1,32 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+set -x
+
+cd subModels/surfaceFilmModels
+wmake libso
+cd ../../subModels/intermediate
+wmake libso
+cd ../../subModels/particlesLib
+wmake
+cd ../../subModels/extrudeToFilmCellDist
+wmake
+cd ../../subModels/addLayerTo0
+wmake
+cd ../../subModels/addTwoLayersTo0
+wmake
+cd ../../subModels/iceMass
+wmake
+cd ../../iceFoam
+wmake
+cd iceDyMFoam
+wmake
+cd ../iceDyMFoam8
+wmake
+cd ../iceDyMFoam82
+wmake
+cd ../iceDyMFoam9
+wmake
+cd ../iceDyMFoam92
+wmake
+cd ../..
+# ----------------------------------------------------------------- end-of-file
